@@ -1,6 +1,6 @@
 {
   "name": "cowsay-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cowsay loader for webpack",
   "main": "index.js",
   "dependencies": {
@@ -16,7 +16,8 @@
   },
   "keywords": [
     "webpack",
-    "cowsay"
+    "cowsay",
+    "loader"
   ],
   "author": "Nathan Hutchison",
   "license": "Public Domain"
