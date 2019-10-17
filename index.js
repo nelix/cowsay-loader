@@ -1,10 +1,14 @@
-var loaderUtils = require('loader-utils');
-var cow = require('cowsay');
+const Cow = require('cowsay');
+const LoaderUtils = require('loader-utils');
 
-module.exports = function(content) {
-  var query = loaderUtils.parseQuery(this.query);
-  this.cacheable && this.cacheable();
+module.exports = function (content) {
+  const {
+    header: text = 'what?',
+  } = LoaderUtils.parseQuery(this.query);
 
-  var header = '/*' + cow.say({text: query.header || 'what?'}) + '*/';
-  return header + '\n' + content;
+  if (this.cacheable) {
+    this.cacheable()
+  }
+
+  return `/*${Cow.say({ text })}*/\n${content}`;
 };
