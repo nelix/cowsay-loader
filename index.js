@@ -4,11 +4,11 @@ const LoaderUtils = require('loader-utils');
 module.exports = function (content) {
   const {
     header: text = 'what?',
-  } = loaderUtils.parseQuery(this.query);
+  } = LoaderUtils.parseQuery(this.query);
 
   if (this.cacheable) {
     this.cacheable()
   }
 
-  return `/*${ cow.say({ text })}*/\n${content}`;
+  return `/*${Cow.say({ text })}*/\n${content}`;
 };
